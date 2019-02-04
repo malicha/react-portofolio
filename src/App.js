@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Home from './pages/Home/Home'
 import './App.css';
+import Kontak from './pages/kontak';
+import About from './pages/about';
+import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Switch>
+          <Route exact={true} path="/" component={Home}/>
+          <Route path="/kontak" component={Kontak}/>
+          <Route path="/about" component={About}/>
+        </Switch>
+        
       </div>
     );
   }
